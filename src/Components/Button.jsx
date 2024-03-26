@@ -3,8 +3,6 @@ import React from "react";
 // styles
 import "./Button.css";
 
-import Logo from "../assets/images/player-vs-player.svg";
-
 export default Button = ({
   bgColor = "#FFCE67",
   textColor = "#000000",
