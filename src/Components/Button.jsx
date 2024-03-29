@@ -4,8 +4,8 @@ import React from "react";
 import "./Button.css";
 
 export default Button = ({
-  bgColor = "#FFCE67",
-  textColor = "#000000",
+  bgColor,
+  textColor,
   hoverColor,
   icon,
   text="play vs player",

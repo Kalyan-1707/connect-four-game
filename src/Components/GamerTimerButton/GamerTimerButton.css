@@ -1,0 +1,13 @@
+#gamer-timer-button{
+    background-image: url("../../assets/images/turn-background-yellow.svg");
+    width: 191px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+}

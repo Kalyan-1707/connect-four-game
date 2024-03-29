@@ -1,3 +1,8 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
 body{
     width: 100vw;
     height: 100vh;
@@ -12,4 +17,38 @@ body{
 #root{
     width: 100%;
     height: 100%;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk-Bold';
+    src: url('./assets/fonts/static/SpaceGrotesk-Bold.ttf')
+}
+
+
+.heading-xsmall{
+    font-family: 'SpaceGrotesk-Bold';
+    font-size: 16px;
+    line-height: 21px;
+    text-transform:uppercase;
+}
+
+.heading-small{
+    font-family: 'SpaceGrotesk-Bold';
+    font-size: 20px;
+    line-height: 26px;
+    text-transform:uppercase;
+}
+
+.heading-medium{
+    font-family: 'SpaceGrotesk-Bold';
+    font-size: 24px;
+    line-height: 31px;
+    text-transform:uppercase;
+}
+
+.heading-large{
+    font-family: 'SpaceGrotesk-Bold';
+    font-size: 56px;
+    line-height: 71px;
+    text-transform:uppercase;
 }
