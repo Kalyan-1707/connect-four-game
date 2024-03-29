@@ -10,7 +10,8 @@ export default Game = () => {
   return (
     <div className='parent-container'>
 
-    
+      <Components.GameBoard/>
+
       <Components.Footer bgColor="#5C2DD5">
         <div className='footer-body'>
         <Components.GamerTimerButton/>
