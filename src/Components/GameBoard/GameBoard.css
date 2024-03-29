@@ -17,14 +17,23 @@
     display: flex;
     padding: 20px 20px 60px 20px;
     column-gap: 24px;
+    z-index:4;
+}
+
+.blocks.selected{
+    z-index: 0;
 }
 
 .blocks > .col{
     width: 64px;
-    height: 64px;
+    /* height: 64px; */
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     row-gap: 24px;
+}
+
+.col:hover{
+    cursor: pointer;
 }
 
 .blocks > .col > .card{
