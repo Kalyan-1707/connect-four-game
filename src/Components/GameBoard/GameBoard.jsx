@@ -56,8 +56,9 @@ const GameBoard = () => {
 
     let columns = [0,1,2,3,4,5,6];
   return (
-    <div className='board black-board'>
-        <img src={BlackBoard}/>
+    <div className='board'>
+        <img  className='black-board'/>
+        <img  className='white-board'/>
         <div className='blocks'>
         {columns.map(() => {
             return (
@@ -68,12 +69,7 @@ const GameBoard = () => {
                 </div>
             )
         })}
-        </div>
-    <div className='board white-board'>
-        <img src={WhiteBoard} />
-        
-        
-    </div>
+        </div>    
     </div>
   )
 }
