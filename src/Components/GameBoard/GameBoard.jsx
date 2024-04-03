@@ -8,6 +8,9 @@ import WhiteBoard from "../../assets/images/board-layer-white-large.svg";
 import BlackBoard from "../../assets/images/board-layer-black-large.svg";
 import RedCard from "../../assets/images/counter-red-large.svg";
 import YellowCard from "../../assets/images/counter-yellow-large.svg";
+import RedMarker from "../../assets/images/marker-red.svg";
+import YellowMarker from "../../assets/images/marker-yellow.svg";
+
 import anime from 'animejs';
 const GameBoard = () => {
 
@@ -27,25 +30,39 @@ const GameBoard = () => {
         
         const container = event.target;
         const parentContainer = container.parentElement;
-        console.log(event.target)
-        parentContainer.classList.toggle('selected')
-        const card = document.createElement('img');
-        card.src = RedCard;
-        card.className = 'card';
-        card.width = 64;
-        card.height = 64;
-        event.target.appendChild(card)
+        parentContainer.classList.toggle('selected');
+        console.log(container)
 
-        // Get the height of the container for animation purposes
+         // find card height and height for transistion
+         const card = document.querySelector('.card');
+         const cardHeight = card?card.width:0;
+         let rowGap =container?window.getComputedStyle(container)?.rowGap:0;
+         if(rowGap){
+            rowGap = parseInt(rowGap.replace('px',''));
+         }
+
+         // Get the height of the container for animation purposes
   const containerHeight = container.offsetHeight;
 
-  const startPoint = -containerHeight + (64 + 24) * (container.childElementCount -1) + 45;
+        
+         // conatiner height + (cardheight + row-gap) * children - 1 + current card height
 
+  const startPoint = -containerHeight + (cardHeight + rowGap)*container.childElementCount + cardHeight/2;
+console.log(startPoint);
+        // create new card
+        const newCard = document.createElement('img');
+        newCard.src = RedCard;
+        newCard.className = 'card';
+        event.target.appendChild(newCard)
+
+        
+
+        
   // Anime.js animation
   const animation = anime({
-    targets: card,
+    targets: newCard,
     translateY: [startPoint, 0], // Move from top to its position
-    duration: 1000, // Animation duration in milliseconds
+    duration: 3000, // Animation duration in milliseconds
     easing: 'linear', // Animation easing function
   })
   animation.finished.then(() => {
